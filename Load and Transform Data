@@ -1,0 +1,29 @@
+## Initialize Spark session
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
+spark = SparkSession.builder.appName('Spark Playground').getOrCreate()
+
+#Copy the starter code or load the file path available in the problem statement 
+
+# Display the final DataFrame using the display() function.
+# display(df_result)
+df = spark.read.csv('/datasets/customers.csv', header = True, inferSchema= True)
+df_filter = df.filter(col("purchase_amount")> 100)
+df_filter_final = df_filter.filter(col('age')>=30)
+df_answer = df_filter_final.select(
+  "customer_id",
+  "name",
+  "purchase_amount"
+)
+display(df_answer)
+# df = spark.read.format("csv") \
+# .option('header', 'true') \
+# .option('inferSchema', 'true') \
+# .load('/datasets/customers.csv') \
+# .filter(col("purchase_amount")> 100) \
+# .filter(col('age')>=30) \
+# .elect(
+#   "customer_id",
+#   "name",
+#   "purchase_amount"
+# )
