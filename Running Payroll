@@ -1,0 +1,29 @@
+We will join the employees and payroll on employee_id.
+Then calculate the pay using when() and otherwise().
+AT last select the required output columns.
+
+
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as F
+from pyspark.sql import Window as W
+
+spark = SparkSession.builder.appName('Spark Playground').getOrCreate()
+
+# Assume the dataframes employees, payroll are already initialized.
+
+# Write the logic and display the final dataframe
+result_join = employees.join(payroll, on = 'employee_id', how ='inner')
+
+df_trans = result_join.withColumn(
+  "pay", 
+  F.when
+  (
+    F.col('hours_worked')<=40, F.col("hours_worked")*F.col('hourly_rate')
+  ).otherwise
+  (
+    (40*F.col('hourly_rate')) + ((F.col('hours_worked') - 40) * F.col('hourly_rate') *1.5)
+  )
+) 
+df_result = df_trans.select('employee_id', 'name', 'pay', 'position')
+display(df_result)
+    
