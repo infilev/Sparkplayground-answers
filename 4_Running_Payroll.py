@@ -25,5 +25,5 @@ df_trans = result_join.withColumn(
   )
 ) 
 df_result = df_trans.select('employee_id', 'name', 'pay', 'position')
-display(df_result)
+df_result.show(truncate=False)
     

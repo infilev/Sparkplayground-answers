@@ -60,5 +60,4 @@ df_fill = df_join.fillna(
 df_result = df_fill.select('product_id', 'name', 'category', 
                            'total_quantity', 'total_revenue', 'total_stock') \
                            .orderBy(col('product_id').asc())
-# Display the final DataFrame using the display() function.
-display(df_result)
+df_result.show()

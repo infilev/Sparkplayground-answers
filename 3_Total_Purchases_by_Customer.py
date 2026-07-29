@@ -12,4 +12,4 @@ df = spark.read.format('csv') \
 df = df.groupBy('customer_id').agg(sum('purchase_amount').alias('total_purchase')).orderBy('customer_id')
 df_result = df.select('customer_id', 'total_purchase')
 # Display the final DataFrame using the display() function.
-display(df_result)
+df_result.show()

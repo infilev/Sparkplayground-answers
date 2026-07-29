@@ -15,8 +15,7 @@ df_answer = df_filter_final.select(
   "name",
   "purchase_amount"
 )
-display(df_answer)
-
+df_answer.show()
 
 # df = spark.read.format("csv") \
 # .option('header', 'true') \
@@ -24,7 +23,7 @@ display(df_answer)
 # .load('/datasets/customers.csv') \
 # .filter(col("purchase_amount")> 100) \
 # .filter(col('age')>=30) \
-# .elect(
+# .select(
 #   "customer_id",
 #   "name",
 #   "purchase_amount"

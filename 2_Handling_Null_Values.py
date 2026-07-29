@@ -16,4 +16,4 @@ df = spark.read.format('csv') \
 
 
 # Display the final DataFrame using the display() function.
-display(df)
+df.show()

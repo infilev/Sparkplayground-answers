@@ -59,11 +59,10 @@ schema_type = StructType([
 
 data = [
   (1, 'Laptop', 'Electronics', "85000", 10),
-  (2, 'shoes', 'Fashion', "5000", 20),
-  (3, 'watch', 'Accessories', "12000", 15),
-  (4, 'phones', 'Electronics', "45000", 5)
+  (2, 'Shoes', 'Fashion', "5000", 20),
+  (3, 'Watch', 'Accessories', "12000", 15),
+  (4, 'Phone', 'Electronics', "45000", 5)
 ]
-
 df = spark.createDataFrame(data, schema=schema_type)
 # products.show(3)
 
