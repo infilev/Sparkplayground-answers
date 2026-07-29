@@ -1,6 +1,6 @@
-We will join the employees and payroll on employee_id.
-Then calculate the pay using when() and otherwise().
-AT last select the required output columns.
+# We will join the employees and payroll on employee_id.
+# Then calculate the pay using when() and otherwise().
+# AT last select the required output columns.
 
 
 from pyspark.sql import SparkSession

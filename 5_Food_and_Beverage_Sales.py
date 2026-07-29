@@ -1,4 +1,5 @@
-# Initialize Spark session
+#Initialize Spark session
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import sum, col
 spark = SparkSession.builder.appName('Spark Playground').getOrCreate()

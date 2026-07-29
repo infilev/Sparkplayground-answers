@@ -1,47 +1,47 @@
-THIS QUESTION IS MADE BY ME AS IT IS PREMIUM QUESTION
-QUESTION
+# THIS QUESTION IS MADE BY ME AS IT IS PREMIUM QUESTION
+# QUESTION
 
-Problem Statement
+# Problem Statement
 
-You are given a products table containing product details. Calculate the discounted selling price for each product.
+# You are given a products table containing product details. Calculate the discounted selling price for each product.
 
-Table: products 
+# Table: products 
 
-Column	          Type
-product_id	  INT
-product_name	  STRING
-category	  STRING
-price	          STRING
-discount_percent  INT
+# Column	          Type
+# product_id	  INT
+# product_name	  STRING
+# category	  STRING
+# price	          STRING
+# discount_percent  INT
 
-Sample Data
+# Sample Data
 
-product_id	product_name	category	price	discount_percent
-1	           Laptop	Electronics	"85000"	  10
-2	           Shoes	Fashion	        "5000"	  20
-3	           Watch	Accessories	"12000"	  15
-4	           Phone        Electronics	"45000"	  5
-Task
+# product_id	product_name	category	price	discount_percent
+# 1	           Laptop	Electronics	"85000"	  10
+# 2	           Shoes	Fashion	        "5000"	  20
+# 3	           Watch	Accessories	"12000"	  15
+# 4	           Phone        Electronics	"45000"	  5
+# Task
 
-Create a new DataFrame that contains:
-product_id
-product_name
-original_price
-discount_amount
-final_price
+# Create a new DataFrame that contains:
+# product_id
+# product_name
+# original_price
+# discount_amount
+# final_price
 
-Requirements
-1) Convert price from string to numeric.
-2) Calculate 
-discount_amount = price × discount_percent / 100
-3) Calculate
-final_price = price − discount_amount
-4) Round the final price to 2 decimal places.
-
-
+# Requirements
+# 1) Convert price from string to numeric.
+# 2) Calculate 
+# discount_amount = price × discount_percent / 100
+# 3) Calculate
+# final_price = price − discount_amount
+# 4) Round the final price to 2 decimal places.
 
 
-SOLUTION
+
+
+# SOLUTION
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
