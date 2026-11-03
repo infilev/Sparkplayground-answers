@@ -75,26 +75,26 @@ df_join.select('employee_id','employee_name','department_name','salary','dept_av
 
 # SQL SOLUTION 
 
-WITH department_averages AS (
-    SELECT
-        department_id,
-        AVG(salary) AS department_average_salary
-    FROM Employees
-    GROUP BY department_id
-)
-SELECT
-    e.employee_id,
-    e.employee_name,
-    d.department_name,
-    e.salary,
-    da.department_average_salary,
-    e.salary - da.department_average_salary AS salary_difference
-FROM Employees e
-JOIN Departments d
-    ON e.department_id = d.department_id
-JOIN department_averages da
-    ON e.department_id = da.department_id
-WHERE e.salary > da.department_average_salary;
+# WITH department_averages AS (
+#     SELECT
+#         department_id,
+#         AVG(salary) AS department_average_salary
+#     FROM Employees
+#     GROUP BY department_id
+# )
+# SELECT
+#     e.employee_id,
+#     e.employee_name,
+#     d.department_name,
+#     e.salary,
+#     da.department_average_salary,
+#     e.salary - da.department_average_salary AS salary_difference
+# FROM Employees e
+# JOIN Departments d
+#     ON e.department_id = d.department_id
+# JOIN department_averages da
+#     ON e.department_id = da.department_id
+# WHERE e.salary > da.department_average_salary;
 
 
 
